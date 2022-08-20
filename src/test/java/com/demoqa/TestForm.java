@@ -10,8 +10,7 @@ import org.openqa.selenium.Keys;
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class TestForm {
 
@@ -28,7 +27,7 @@ public class TestForm {
         $("#firstName").setValue("Ivan");
         $("#lastName").setValue("Ivanov");
         $("#userEmail").setValue("email@email.com");
-        $("label[for='gender-radio-1']").click();
+        $("input[value=Male]").click();
         $("#userNumber").setValue("9374364782");
         $("#dateOfBirthInput").click();
         $("div[class*='react-datepicker__month-dropdown-container").click();
@@ -37,7 +36,7 @@ public class TestForm {
         $("select[class='react-datepicker__year-select'] option[value='1993']").click();
         $("div[aria-label='Choose Saturday, May 29th, 1993']").click();
         $("#subjectsInput").setValue("English").sendKeys(Keys.ENTER);
-        $("label[for='hobbies-checkbox-1']").click();
+        $x("//label[text()='Sports']").click();
         $("#uploadPicture").uploadFile(new File("src/test/resources/selenide-logo-big.png"));
         $("#currentAddress").setValue("My Address Soviet Union");
         $("#react-select-3-input").setValue("Haryana").sendKeys(Keys.ENTER);

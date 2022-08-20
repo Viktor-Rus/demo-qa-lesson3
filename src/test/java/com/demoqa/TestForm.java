@@ -27,7 +27,7 @@ public class TestForm {
         $("#firstName").setValue("Ivan");
         $("#lastName").setValue("Ivanov");
         $("#userEmail").setValue("email@email.com");
-        $("input[value=Male]").click();
+        $x("//label[text()='Male']").click();
         $("#userNumber").setValue("9374364782");
         $("#dateOfBirthInput").click();
         $("div[class*='react-datepicker__month-dropdown-container").click();
